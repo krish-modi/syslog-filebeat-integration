@@ -1,0 +1,19 @@
+filebeat.inputs:
+- type: syslog
+  format:  # Choose the format accordingly
+  protocol.tcp:
+    host: "0.0.0.0:9000"
+
+fields_under_root: true
+fields:
+  PRIVATE_KEY: ""   # Coralogix account private ket to send data
+  COMPANY_ID:       # Coralogix account company id
+  APP_NAME: ""      # Application name of your choice
+  SUB_SYSTEM: ""    # Subsystem name of your choice
+
+### Outputs
+output:
+  logstash:
+    hosts: ["logstash.<CLUSTER ID>:5015"]               # Add the relevant coralogix logstash cluster
+    ssl:
+      certificate_authorities: ["<CERTIFICATE PATH>"]   # Add the coralogix certificate path
