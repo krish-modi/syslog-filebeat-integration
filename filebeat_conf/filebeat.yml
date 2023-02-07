@@ -14,6 +14,6 @@ fields:
 ### Outputs
 output:
   logstash:
-    hosts: ["logstash.<CLUSTER ID>:5015"]               # Add the relevant coralogix logstash cluster
+    hosts: ["<LOGSTASH CLUSTER URL>:5015"]               # Add the relevant coralogix logstash cluster url
     ssl:
       certificate_authorities: ["<CERTIFICATE PATH>"]   # Add the coralogix certificate path
